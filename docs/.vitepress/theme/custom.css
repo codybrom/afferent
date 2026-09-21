@@ -1,0 +1,474 @@
+/**
+ * Afferent Theme - Duotone Wireframe System
+ * Dark Spruce: #152f21 (color(display-p3 0.108 0.181 0.135))
+ * Warm Ivory: #fff3e5 (color(display-p3 0.999 0.954 0.903))
+ * Contrast ratio: 13.15:1 (AAA)
+ * Fonts: Inconsolata (headings/nav/labels) + Inter (body)
+ * Icons: Feather
+ * Strict 1px wireframes, zero border-radius, inverted hover interactions, Tachyons scale.
+ */
+
+:root {
+  --font-family-heading:
+    Inconsolata, Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+  --font-family-body:
+    Inter, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "helvetica neue",
+    helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-family-mono:
+    Inconsolata, Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+
+  --vp-font-family-base: var(--font-family-body);
+  --vp-font-family-mono: var(--font-family-mono);
+
+  /* Duotone pair */
+  --bg: #0e1e15;
+  --bg-surface: #152f21;
+  --bg-recessed: #08120d;
+  --bg-elevated: #1a3828;
+
+  --fg: #fff3e5;
+  --fg-85: rgba(255, 243, 229, 0.85);
+  --fg-65: rgba(255, 243, 229, 0.65);
+  --fg-40: rgba(255, 243, 229, 0.4);
+  --fg-20: rgba(255, 243, 229, 0.2);
+  --fg-10: rgba(255, 243, 229, 0.1);
+  --fg-05: rgba(255, 243, 229, 0.05);
+
+  --border: var(--fg-20);
+  --border-strong: var(--fg-40);
+
+  /* VitePress Token Mapping */
+  --vp-c-bg: var(--bg);
+  --vp-c-bg-alt: var(--bg-surface);
+  --vp-c-bg-elv: var(--bg-elevated);
+  --vp-c-bg-soft: var(--bg-surface);
+
+  --vp-c-border: var(--border);
+  --vp-c-divider: var(--border);
+  --vp-c-gutter: var(--border);
+
+  --vp-c-text-1: var(--fg);
+  --vp-c-text-2: var(--fg-85);
+  --vp-c-text-3: var(--fg-65);
+
+  --vp-c-brand-1: var(--fg);
+  --vp-c-brand-2: var(--fg-85);
+  --vp-c-brand-3: var(--fg);
+  --vp-c-brand-soft: var(--fg-10);
+
+  --vp-code-bg: var(--bg-recessed);
+  --vp-code-block-bg: var(--bg-recessed);
+
+  /* Duotone Buttons */
+  --vp-button-brand-border: var(--fg);
+  --vp-button-brand-text: var(--bg);
+  --vp-button-brand-bg: var(--fg);
+  --vp-button-brand-hover-border: var(--fg);
+  --vp-button-brand-hover-text: var(--fg);
+  --vp-button-brand-hover-bg: transparent;
+
+  --vp-button-alt-border: var(--border-strong);
+  --vp-button-alt-text: var(--fg);
+  --vp-button-alt-bg: transparent;
+  --vp-button-alt-hover-border: var(--fg);
+  --vp-button-alt-hover-text: var(--bg);
+  --vp-button-alt-hover-bg: var(--fg);
+
+  --vp-nav-bg-color: rgba(14, 30, 21, 0.94);
+}
+
+/* Force dark scheme */
+html,
+html.dark {
+  color-scheme: dark;
+  background-color: var(--bg) !important;
+}
+
+body {
+  background-color: var(--bg) !important;
+  color: var(--fg) !important;
+  font-family: var(--font-family-body);
+  margin: 0;
+}
+
+/* Zero border radius everywhere - strict wireframe */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Tachyons Scale */
+.f1 {
+  font-size: 0.75rem;
+}
+.f2 {
+  font-size: 0.875rem;
+}
+.f3 {
+  font-size: 1rem;
+}
+.f4 {
+  font-size: 1.25rem;
+}
+.f5 {
+  font-size: 1.5rem;
+}
+.f6 {
+  font-size: 2rem;
+}
+.f7 {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+.f8 {
+  font-size: 3.8rem;
+  line-height: 1;
+}
+
+.mono {
+  font-family: var(--font-family-mono);
+}
+.ttu {
+  text-transform: uppercase;
+}
+.tracked {
+  letter-spacing: 0.08em;
+}
+.fw5 {
+  font-weight: 500;
+}
+.fw6 {
+  font-weight: 600;
+}
+.fw7 {
+  font-weight: 700;
+}
+.fw8 {
+  font-weight: 800;
+}
+.fw9 {
+  font-weight: 900;
+}
+
+.m0 {
+  margin: 0;
+}
+.mb1 {
+  margin-bottom: 4px;
+}
+.mb2 {
+  margin-bottom: 8px;
+}
+.mb3 {
+  margin-bottom: 12px;
+}
+.mt1 {
+  margin-top: 4px;
+}
+.mt2 {
+  margin-top: 8px;
+}
+.mt3 {
+  margin-top: 12px;
+}
+.mt4 {
+  margin-top: 24px;
+}
+.ml-auto {
+  margin-left: auto;
+}
+
+.fg-85 {
+  color: var(--fg-85);
+}
+.fg-65 {
+  color: var(--fg-65);
+}
+
+/* Homepage */
+.af-hero {
+  padding: 48px 0 40px;
+}
+
+.af-hero-title {
+  margin: 0 0 12px;
+  font-family: var(--font-family-mono);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.af-hero-tagline {
+  max-width: 34rem;
+  margin: 0 0 24px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--fg-85);
+}
+
+.af-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.af-cmd {
+  padding: 6px 14px;
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-family-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.af-home {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.af-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border: 1px solid var(--fg);
+  transition: all 0.12s ease;
+  cursor: pointer;
+}
+
+.af-btn-solid {
+  background: var(--fg);
+  color: var(--bg) !important;
+}
+
+.af-btn-solid:hover {
+  background: transparent;
+  color: var(--fg) !important;
+}
+
+.af-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  margin-top: 36px;
+}
+
+/* Nav */
+.VPNav {
+  background-color: var(--vp-nav-bg-color) !important;
+  border-bottom: 1px solid var(--border) !important;
+  backdrop-filter: blur(8px);
+}
+
+.VPNavBarTitle .title {
+  font-family: var(--font-family-mono);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--fg) !important;
+  font-size: 1.15rem;
+}
+
+.VPNavBarMenuLink {
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg) !important;
+}
+
+.VPNavBarMenuLink:hover {
+  opacity: 0.7;
+}
+
+/* Sidebar */
+.VPSidebar {
+  background-color: var(--bg) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+.VPSidebarItem .text {
+  font-family: var(--font-family-mono);
+  color: var(--fg-85);
+}
+
+.VPSidebarItem.is-active > .item .text {
+  color: var(--bg) !important;
+  font-weight: 800 !important;
+}
+
+.VPSidebarItem.is-active > .item {
+  background-color: var(--fg) !important;
+  border-left: none !important;
+  padding: 6px 12px;
+}
+
+/* Doc Page Typography & Wireframes */
+.vp-doc h1 {
+  font-family: var(--font-family-heading);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4em;
+}
+
+.vp-doc h2 {
+  font-family: var(--font-family-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  border-top: 1px solid var(--border);
+  margin-top: 2.2rem;
+  padding-top: 1.2rem;
+}
+
+.vp-doc h3 {
+  font-family: var(--font-family-heading);
+  color: var(--fg);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.vp-doc p,
+.vp-doc li {
+  color: var(--fg);
+  line-height: 1.65;
+}
+
+/* Code Blocks */
+.vp-doc div[class*="language-"] {
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  background-color: var(--vp-code-block-bg) !important;
+}
+
+.vp-doc div[class*="language-"] .lang {
+  color: var(--fg-65) !important;
+  font-family: var(--font-family-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vp-doc :not(pre) > code {
+  color: var(--fg) !important;
+  background-color: var(--fg-10) !important;
+  border: 1px solid var(--border);
+  border-radius: 0 !important;
+  padding: 0.15em 0.4em;
+  font-size: 0.88em;
+  font-family: var(--font-family-mono);
+  font-weight: 600;
+}
+
+/* Code Tabs */
+.vp-code-group .tabs {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.vp-code-group .tabs input:checked + label {
+  color: var(--bg) !important;
+  background-color: var(--fg) !important;
+  font-family: var(--font-family-mono);
+  font-weight: 800;
+}
+
+/* Tables */
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid var(--border) !important;
+  margin: 1.5rem 0;
+  border-radius: 0 !important;
+}
+
+.vp-doc th {
+  background-color: var(--bg-surface) !important;
+  color: var(--fg) !important;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  border: 1px solid var(--border) !important;
+  padding: 10px 14px;
+}
+
+.vp-doc td {
+  border: 1px solid var(--border) !important;
+  padding: 10px 14px;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.vp-doc tr:nth-child(2n) td {
+  background-color: var(--bg-surface);
+}
+
+/* Inverted link hover */
+.vp-doc a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  font-weight: 700;
+  padding: 0 2px;
+  transition: all 0.12s ease;
+}
+
+.vp-doc a:hover {
+  background-color: var(--fg);
+  color: var(--bg) !important;
+  text-decoration: none;
+}
+
+/* Blockquotes */
+.vp-doc blockquote {
+  border: 1px solid var(--border) !important;
+  border-left: 4px solid var(--fg) !important;
+  background-color: var(--bg-surface);
+  color: var(--fg-85);
+  padding: 0.85rem 1.2rem;
+  margin: 1.4rem 0;
+  border-radius: 0 !important;
+}
+
+/* Search Modal */
+.DocSearch-Modal,
+.VPLocalSearchBox .shell {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--fg) !important;
+  border-radius: 0 !important;
+  color: var(--fg) !important;
+}
+
+/* Footer */
+.VPFooter {
+  border-top: 1px solid var(--border) !important;
+  background-color: var(--bg) !important;
+}
+
+.VPFooter .message,
+.VPFooter .copyright {
+  color: var(--fg-65) !important;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

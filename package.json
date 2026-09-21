@@ -1,0 +1,57 @@
+{
+  "name": "afferent",
+  "version": "0.1.0",
+  "description": "Sensory 2D spatial layout and perceptual engine for documents, tables, and visual structures",
+  "homepage": "https://afferent.dev",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "ocr",
+    "spatial-layout",
+    "perception",
+    "document-ai",
+    "layout-analysis",
+    "column-detection",
+    "typesafe",
+    "jev",
+    "system-one"
+  ],
+  "author": "Cody Bromley",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.2",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.8",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1",
+    "vitepress": "^1.6.4",
+    "vitest": "^5.0.1"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "esbuild@0.21.5": true
+  }
+}
